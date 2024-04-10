@@ -16,6 +16,16 @@ function selectSquatsOption(option) {
 function selectLikeOption(option) {
     if (option === 'yes') {
         window.location.href = 'final.html'; // Redirect to final.html when 'yes' is clicked
+        disableNoOption(); // Disable 'no' option
+    }
+}
+
+// Function to handle button click events on final.html
+function selectPromOption(option) {
+    if (option === 'yes') {
+        flashRainbowColors(function() {
+            window.location.href = 'countdown.html'; // Redirect to countdown.html after flashing rainbow colors
+        });
     }
 }
 
@@ -39,4 +49,4 @@ function flashRainbowColors(callback) {
             callback();
         }
     }, 2000); // Flash colors for 2 seconds
-} 
+}
