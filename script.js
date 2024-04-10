@@ -17,7 +17,7 @@ function selectSquatsOption(option) {
 // Function to handle liking option
 function selectLikeOption(option) {
     if (option === 'yes') {
-        window.location.href = 'final.html';
+        window.location.href = 'countdown.html'; // Redirect to countdown page
     } else if (option === 'no') {
         // Handle 'No' option if needed
     }
@@ -43,6 +43,14 @@ function flashRainbowColors(callback) {
             callback();
         }
     }, 2000); // Flash colors for 2 seconds
+}
+
+// Function to display the cat-heart.gif and flash rainbow colors
+function displayCatHeartAndFlashColors() {
+    flashRainbowColors(function() {
+        document.getElementById('question').style.display = 'none'; // Hide the question
+        displayCatHeart(); // Display the cat-heart.gif
+    });
 }
 
 // Function to display the cat-heart.gif
