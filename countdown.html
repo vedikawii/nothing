@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Timer</title>
-    <style>
-        #countdown {
-            font-size: 24px;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
+    <title>Countdown to Prom</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
-    <div id="countdown"></div>
+    <div id="container">
+        <div id="countdown"></div>
+    </div>
 
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
     <script>
-        // Set the date and time for the countdown
+        // Set the date we're counting down to
         var countDownDate = new Date("April 13, 2024 18:30:00").getTime();
 
-        // Update the countdown every second
-        var x = setInterval(function() {
-            // Get the current time
+        // Update the countdown every 1 second
+        var countdownInterval = setInterval(function() {
+            // Get the current date and time
             var now = new Date().getTime();
 
-            // Calculate the distance between now and the countdown date
+            // Calculate the remaining time
             var distance = countDownDate - now;
 
             // Calculate days, hours, minutes, and seconds
@@ -33,16 +30,16 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display the countdown
-            document.getElementById("countdown").innerHTML = "Countdown: " + days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+            // Display the countdown in the "countdown" div
+            document.getElementById("countdown").innerHTML = "<h1>COUNTDOWN TO PROM</h1><p>" + days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s </p>";
 
-            // If the countdown is finished, display a message
+            // If the countdown is over, display a message
             if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Prom night has arrived!";
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "<h1>prom <3</h1>";
             }
-        }, 1000);
+        }, 1000); // Update every 1 second
     </script>
 </body>
 </html>
