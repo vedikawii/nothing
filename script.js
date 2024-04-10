@@ -39,4 +39,4 @@ function flashRainbowColors(callback) {
             callback();
         }
     }, 2000); // Flash colors for 2 seconds
-}
+} 
