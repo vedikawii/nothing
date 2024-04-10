@@ -18,6 +18,8 @@ function selectSquatsOption(option) {
 function selectLikeOption(option) {
     if (option === 'yes') {
         window.location.href = 'final.html';
+    } else if (option === 'no') {
+        // Handle 'No' option if needed
     }
 }
 
@@ -25,3 +27,4 @@ function selectLikeOption(option) {
 function disableOption() {
     document.getElementById('no-option').setAttribute('disabled', true);
 }
+
