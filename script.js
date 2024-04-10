@@ -7,8 +7,10 @@ function selectBenchOption(option) {
 
 // Function to handle jump squats options
 function selectSquatsOption(option) {
-    if (option === '1') {
+    if (option === 'yes') {
         window.location.href = 'page3.html';
+    } else if (option === 'no') {
+        // Handle 'No' option if needed
     }
 }
 
